@@ -9,11 +9,11 @@ import readchar
 def check_for_up_key():
     while True:
         char = readchar.readkey()
-        if ord(char) == 27:  # Código ASCII para el carácter de escape (ESC)
+        if ord(char[0]) == 27:  # Código ASCII para el carácter de escape (ESC)
             char = readchar.readkey()
-            if ord(char) == 91:  # Código ASCII para '['
+            if ord(char[0]) == 91:  # Código ASCII para '['
                 char = readchar.readkey()
-                if ord(char) == 65:  # Código ASCII para 'A'
+                if ord(char[0]) == 65:  # Código ASCII para 'A'
                     print("Se presionó la tecla de flecha arriba (↑). Saliendo del bucle.")
                     break
 
