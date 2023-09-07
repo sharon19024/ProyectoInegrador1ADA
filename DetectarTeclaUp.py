@@ -3,19 +3,15 @@
 
 # Escribir un programa que corra un bucle infinito leyendo e imprimiento las teclas y sólo terminará cuando se presione la tecla ↑ indicada como UP
 
-import readchar
+import keyboard
 
 # Función para verificar si se ha presionado la tecla de flecha arriba (↑)
 def check_for_up_key():
     while True:
-        char = readchar.readkey()
-        if ord(char) == 27:  # Código ASCII para el carácter de escape (ESC)
-            char = readchar.readkey()
-            if ord(char) == 91:  # Código ASCII para '['
-                char = readchar.readkey()
-                if ord(char) == 65:  # Código ASCII para 'A'
-                    print("Se presionó la tecla de flecha arriba (↑). Saliendo del bucle.")
-                    break
+        event = keyboard.read_event()
+        if event.event_type == keyboard.KEY_DOWN and event.name == "up":
+            print("Se presionó la tecla de flecha arriba (↑). Saliendo del bucle.")
+            break
 
 # Iniciar el bucle para verificar la tecla de flecha arriba
 check_for_up_key()
