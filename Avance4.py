@@ -73,3 +73,4 @@ laberinto = convertir_a_matriz(laberinto_str)
 
 # Ejecutar el bucle principal del juego
 main_loop(laberinto, posicion_inicial, posicion_final)
+
